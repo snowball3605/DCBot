@@ -8,13 +8,16 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.*;
 import java.time.LocalDate;
 
+import static com.onmi_tech.Main.my_obj;
+import static com.onmi_tech.Main.sn_logger;
+
 public class Info extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         if (event.getName().equals("info")) {
-            LocalDate myObj = LocalDate.now();
-            event.replyEmbeds(new EmbedBuilder().setColor(Color.BLUE).setTitle("Info " + event.getJDA().getSelfUser().getName()).setDescription("Creation： 24/10/2025\nServer Time: " + myObj).build()).queue();
-
+            event.replyEmbeds(new EmbedBuilder().setColor(Color.BLUE).setTitle("Info " + event.getJDA().getSelfUser().getName()).setDescription("Creation： 24/10/2025\nServer Time: " + my_obj).build()).queue();
+            sn_logger.info("info command ran");
+            // wtf
         }
     }
 }
