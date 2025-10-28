@@ -13,7 +13,6 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.awt.*;
 
-import static com.onmi_tech.Main.sn_logger;
 
 public class Join_Leave extends ListenerAdapter {
 
@@ -23,7 +22,6 @@ public class Join_Leave extends ListenerAdapter {
         text_channel.sendMessageEmbeds(
                 new EmbedBuilder().setImage(event.getMember().getEffectiveAvatarUrl()).setColor(Color.BLUE).setTitle("Join Channel").setDescription("Welcome " + event.getMember().getUser().getName()+"\nJoined Time: " + Main.my_obj).build()
         ).queue();
-        sn_logger.info("[Join_Leave.java]onGuildMemberJoin ran");
     }
 
 }
